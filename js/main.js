@@ -15,8 +15,10 @@ let sumA = 0;
 
 for (let i = 0; i < arr1.length; i++){
     sumA = sumA + arr1[i];
+    Math.max.apply(null, arr1);
+    Math.min.apply(null, arr1);
 }
-console.log( Math.max.apply(null, arr1));
+console.log(sumA);
 
 /*----------------------------------- 2 -------------------------------------*/
 let arr2 = [-1,-8,-2];
@@ -25,7 +27,7 @@ let sumB = 0;
 for (let i = 0; i < arr2.length; i++){
     sumB = sumB + arr2[i];
     Math.max.apply(null, arr2);
-    Math.min.apply(null, arr2)
+    Math.min.apply(null, arr2);
 }
 console.log(sumB);
 
@@ -36,7 +38,7 @@ let sumC = 0;
 for (let i = 0; i < arr3.length; i++){
     sumC = sumC + arr3[i];
     Math.max.apply(null, arr3);
-    Math.min.apply(null, arr3)
+    Math.min.apply(null, arr3);
 }
 console.log(sumC);
 
@@ -52,7 +54,11 @@ function getSum(array) {
     for (let i = 0; i < array.length; i++) {
         sum = sum + array[i];
     }
-    return [sum, Math.max.apply(null, arr), Math.min.apply(null, arr)]
+    return {
+        sum: sum,
+        mathMax: Math.max.apply(null, arr),
+        mathMin: Math.min.apply(null, arr)
+    }
 }
 console.log(getSum(arr));
 
@@ -66,12 +72,22 @@ show('yoyo');
 
 function run(a, b, callback){
     let result = a+ b;
+    console.log(result);
     return callback(result);
 }
 run(10, 15, show);
 
 /*
-
 Fourths task
 Функция, которая будет принимать массив и ретурнить обьект, свойства будут индексы, а ключи - значения под этим индексом в массиве*/
+
+function getObj(arr) {
+    let myObject = {};
+
+    for (let i = 0; i < arr.length; i++){
+        myObject[i] = arr[i];
+    }
+    return myObject;
+}
+console.log(getObj([10,20,30,40]));
 
