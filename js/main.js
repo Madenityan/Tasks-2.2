@@ -56,8 +56,8 @@ function getSum(array) {
     }
     return {
         sum: sum,
-        mathMax: Math.max.apply(null, arr),
-        mathMin: Math.min.apply(null, arr)
+        mathMax: Math.max.apply(null, array),
+        mathMin: Math.min.apply(null, array)
     }
 }
 console.log(getSum(arr));
